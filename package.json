@@ -1,6 +1,6 @@
 {
   "name": "swish-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CSS library to quickly build mockups and get inspired!",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,8 @@
     "Helper",
     "Styles",
     "Library",
-    "Design",
-    "Fast",
-    "Code",
-    "Less"
+    "Design Fast",
+    "Code Less"
   ],
   "author": "giustiRo",
   "license": "ISC",
@@ -33,5 +31,8 @@
     "cssnano": "^6.0.0",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "node-sass": "^8.0.0"
   }
 }
