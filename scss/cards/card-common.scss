@@ -1,0 +1,106 @@
+[class*="\$cards"] {
+    padding-block: calc(var(--size-4));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    // To Play
+    align-items: start;
+    text-align: center;
+
+    // Header or Previous Section
+    >:not(:has(*>:is(h4, h5, h6, button, p)), ul, ol) {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    :has(*>:is(h4, h5, h6, button, p)) {
+
+        margin: var(--size-1);
+        display: flex;
+        flex-direction: column;
+        max-width: 90vw;
+        background-color: var(--contrast-color);
+        color: var(--primary-color);
+        border-radius: calc(var(--size-1)* .2);
+
+        flex: 1; // Fills space around ..
+
+        /* TEXT */
+        // Text Container
+        >:not(:has(picture, img, svg, video, iframe)) {
+            // border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            padding-inline: var(--size-2);
+            position: relative;
+            order: 1;
+        }
+
+        a {
+            color: var(--brand-color-2);
+            order: 1;
+            padding: var(--size-1);
+            font-weight: bolder;
+
+            &:hover {
+                opacity: var(--opacity-4);
+            }
+        }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--brand-color-1);
+
+            &::first-line {
+                color: var(--primary-color);
+
+            }
+        }
+
+        /* IMAGES*/
+        :has(picture, img, svg, video, iframe) {
+            display: flex;
+            height: auto;
+            border-radius: inherit;
+        }
+
+        :is(picture, img, svg, video, iframe)[src*="/"] {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            // border: 2px solid red;
+        }
+
+        ~:has(:is(picture, img, svg, video, iframe):not([src*="/"])) {
+            border-top: calc(var(--size-1)* 0.5) solid var(--brand-color-2);
+        }
+
+    }
+
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        padding-block: calc(var(--size-6));
+
+
+        :has(*>:is(h4, h5, h6, button, p)) {
+            min-width: 250px;
+            max-width: 250px;
+
+            :is(picture, img, svg, video, iframe)[src*="/"] {
+                height: clamp(200px, 50vw, 250px);
+            }
+
+        }
+
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 90%;
+        margin-inline: auto;
+    }
+}

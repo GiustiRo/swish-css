@@ -1,0 +1,174 @@
+/* Fonts */
+/* work-sans - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/work-sans-v18-latin-regular.woff2') format('woff2'),
+        // url('work-sans-v18-latin-regular.woff') format('woff');
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Root declarations */
+:root {
+    --primary-color: #f5f5f5;
+    --contrast-color: #2e2e2e;
+    --brand-color-1: #FF5858;
+    --brand-color-contrast-1: #ffffff;
+    --brand-color-2: #8758ff;
+    --brand-color-contrast-2: #ffffff;
+
+    --primary-color-rgb: 245, 245, 245;
+    --contrast-color-rgb: 46, 46, 46;
+    --brand-color-1-rgb: 255, 88, 88;
+    --brand-color-2-rgb: 135, 88, 255;
+
+    --primary-color-shadow: #ffffff;
+    --contrast-color-shadow: #161616;
+    --primary-color-shadow-rgb: 255, 255, 255;
+    --contrast-color-shadow-rgb: 22, 22, 22;
+
+
+
+    --ff-1: 'Work Sans', sans-serif;
+    --ff-2: monospace, sans-serif;
+    --ff-3: math, auto, sans-serif;
+
+    --size-1: 1rem;
+    --size-2: 1.5rem;
+    --size-3: 2rem;
+    --size-4: 2.5rem;
+    --size-5: 3rem;
+    --size-6: 4rem;
+
+    --timing-fast: .2s;
+    --timing-normal: .5s;
+    --timing-slow: 1s;
+
+    --opacity-1: .15;
+    --opacity-2: .3;
+    --opacity-3: .5;
+    --opacity-4: .7;
+    --opacity-5: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #2e2e2e;
+        --contrast-color: #f5f5f5;
+
+        --brand-color-1: #8758ff;
+        --brand-color-contrast-1: #ffffff;
+        --brand-color-2: #FF5858;
+        --brand-color-contrast-2: #ffffff;
+
+        --primary-color-rgb: 46, 46, 46;
+        --contrast-color-rgb: 245, 245, 245;
+        --brand-color-1-rgb: 135, 88, 255;
+        --brand-color-2-rgb: 255, 88, 88;
+
+        --primary-color-shadow: #161616;
+        --contrast-color-shadow: #ffffff;
+        --primary-color-shadow-rgb: 22, 22, 22;
+        --contrast-color-shadow-rgb: 255, 255, 255;
+
+
+
+    }
+}
+
+/* Imports ############################# */
+// Elements
+@import './navs/index.scss';
+@import './buttons/index.scss';
+@import './badges/index.scss';
+@import './heros/index.scss';
+@import './cards/index.scss';
+@import './brands/index.scss';
+@import './forms/index.scss';
+@import './footers/index.scss';
+
+// Topics / Thematics
+@import './topics/index.scss';
+
+// Utils
+@import './utils/index.scss';
+
+// Extras
+// @import './gradients/gradients.scss';
+@import './keyframes/keyframes.scss';
+
+
+
+/* Common Rules */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+    font-size: var(--size-1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--contrast-color);
+}
+
+h1 {
+    font-size: var(--size-6);
+    margin-block: calc(var(--size-1) * 0.1);
+}
+
+h2 {
+    font-size: var(--size-5);
+    margin-block: var(--size-1);
+}
+
+h3 {
+    font-size: var(--size-4);
+    margin-block: var(--size-1);
+}
+
+h4 {
+    font-size: var(--size-3);
+    margin-block: calc(var(--size-1) * .7);
+}
+
+h5 {
+    font-size: var(--size-2);
+    margin-block: calc(var(--size-1) * .5);
+}
+
+h6 {
+    font-size: var(--size-1);
+    margin-block: calc(var(--size-1) * .5);
+}
+
+p {
+    margin-block: calc(var(--size-1)*0.5);
+}
+
+body,
+html,
+button,
+input,
+q,
+textarea,
+data {
+    font-family: var(--ff-1);
+}
+
+p,
+span {
+    line-height: 1.5;
+}
+

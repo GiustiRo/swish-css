@@ -1,0 +1,114 @@
+.\$hero-3 {
+    @import '../badges/badge-1.scss';
+    @import '../buttons/button-1.scss';
+
+    width: 100vw;
+    padding-block: 0 !important;
+    text-align: center;
+    >*:not(:has(img, picture, video, iframe)) {
+        z-index: 1;
+        width: 80vw;
+        height: 102vh;
+        margin-inline: auto;
+        margin-block: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    :has(button,
+    input[type="submit"],
+    input[type="reset"]){
+        display: flex;
+        justify-content: center;
+        :is(button,
+        input[type="submit"],
+        input[type="reset"]){
+            justify-content: center;
+            &:nth-of-type(n+2){
+                margin-inline-start: calc(var(--size-1)*1);
+            }
+        }
+    }
+
+    >*:where(:has(img, picture, video, iframe)) {
+        position: absolute;
+        z-index: 0;
+
+        picture,
+        img,
+        svg,
+        video,
+        iframe {
+            width: 100vw;
+            max-width: 100vw;
+            height: 106vh;
+            max-height: 106vh;
+            filter: opacity(0.5);
+            aspect-ratio: 9/18;
+            object-fit: cover;
+        }
+    }
+    ul,ol{
+        margin-inline: 0;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .\$hero-3 {
+        height: clamp(50vh, 100vh, 107vh);
+        width: 100%;
+        margin-inline: auto;
+        text-align: center;
+
+        >*:not(:has(img, picture, video, iframe)) {
+            margin-inline: auto;
+            // background-color: blue;
+            width: clamp(80%, 90vw, 1200px);
+            height: clamp(50vh, 70vh, 100vh);
+            max-width: 80vw;
+            justify-content: center;
+        }
+
+        picture,
+        img,
+        svg,
+        video,
+        iframe {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        ul,
+        ol {
+            width: fit-content;
+            max-width: 70vw;
+            margin-inline: auto;
+            min-height: calc(var(--size-2)*1.2);
+        }
+
+        :has(button,
+        input[type="submit"],
+        input[type="reset"]){
+
+            justify-content: center;
+            :is(button,
+            input[type="submit"],
+            input[type="reset"]){
+                margin-inline: calc(var(--size-1));
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .\$hero-3 {
+        height: 100vh;
+
+        >*:not(:has(img, picture, video, iframe)) {
+            width: clamp(80%, 80vw, 1200px);
+        }
+    }
+}

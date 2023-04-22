@@ -1,0 +1,183 @@
+/* Common Hero Root Styles */
+[class*="\$hero"] {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: var(--size-4);
+    align-items: center;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: var(--size-1);
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        opacity: 0.7;
+    }
+
+    picture,
+    img,
+    svg,
+    video,
+    iframe {
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}
+
+/* Hero Alignments */
+.\$hero-left {
+    text-align: left;
+}
+
+.\$hero-center {
+    text-align: center;
+}
+
+.\$hero-right {
+    text-align: right;
+}
+
+/* Hero Spacing */
+.\$hero-space-0 {
+    gap: 3rem !important;
+    width: 100% !important;
+}
+
+.\$hero-space-1 {
+    gap: 2rem !important;
+    width: 90% !important;
+}
+
+.\$hero-space-2 {
+    gap: 2rem !important;
+    width: 70% !important;
+}
+
+.\$hero-space-3 {
+    gap: 1rem !important;
+    width: 60% !important;
+}
+
+@media (min-width: 768px) {
+    [class*="\$hero"] {
+        flex-direction: row;
+        padding-block: 0;
+        height: 90vh;
+        >:has(img,picture,video,iframe){
+            flex-grow: 1;
+        }
+        >:not(:has(img,picture,video,iframe)){
+            max-width: 50vw;
+        }
+        picture,
+        img,
+        svg,
+        video,
+        iframe {
+            max-width: clamp(90%, 90%, 1200px);
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            display: flex;
+            margin-inline: auto;
+        }
+
+        ul,
+        ol {
+            margin-inline: unset;
+        }
+    }
+
+    /* Hero Alignments */
+    .\$_hero-left {
+        text-align: left;
+    }
+
+    .\$_hero-center {
+        text-align: center;
+    }
+
+    .\$_hero-right {
+        text-align: right;
+    }
+
+    /* Hero Spacing */
+    .\$_hero-space-0 {
+        gap: 3rem !important;
+        width: 100% !important;
+    }
+
+    .\$_hero-space-1 {
+        gap: 2rem !important;
+        width: 90% !important;
+    }
+
+    .\$_hero-space-2 {
+        gap: 2rem !important;
+        width: 70% !important;
+    }
+
+    .\$_hero-space-3 {
+        gap: 1rem !important;
+        width: 60% !important;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    [class*="\$hero"] {
+        padding-block: 0;
+        width: 80%;
+        gap: 2rem;
+        height: 90vh;
+
+        picture,
+        img,
+        svg,
+        video,
+        iframe {
+            object-fit: cover;
+        }
+
+    }
+
+    /* Hero Alignments */
+    .\$__hero-left {
+        text-align: left;
+    }
+
+    .\$__hero-center {
+        text-align: center;
+    }
+
+    .\$__hero-right {
+        text-align: right;
+    }
+
+    /* Hero Spacing */
+    .\$__hero-space-0 {
+        gap: 3rem !important;
+        width: 100% !important;
+    }
+
+    .\$__hero-space-1 {
+        gap: 2rem !important;
+        width: 90% !important;
+    }
+
+    .\$__hero-space-2 {
+        gap: 2rem !important;
+        width: 70% !important;
+    }
+
+    .\$__hero-space-3 {
+        gap: 1rem !important;
+        width: 60% !important;
+    }
+
+}

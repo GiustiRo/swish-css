@@ -1,0 +1,129 @@
+.\$luxury,
+.\$luxury-1 {
+    * {
+        font-family: var(--ff-3);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    [class*="\$nav"] {
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+
+        ul,
+        ol {
+            backdrop-filter: blur(10px);
+            background-color: transparent !important;
+
+            * {
+                background-color: var(--contrast-color) !important;
+                color: var(--primary-color) !important;
+                padding: calc(var(--size-1)*0.5) calc(var(--size-1)*1);
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            ul,
+            ol {
+                * {
+                    // color: var(--contrast-color) !important;
+                    background-color: transparent !important;
+                    padding: initial;
+
+                }
+
+                background-color: transparent;
+            }
+        }
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    p,
+    a,
+    h4,
+    h5,
+    h6 {
+        filter: sepia(.7);
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        font-weight: normal !important;
+        text-transform: uppercase;
+    }
+
+    [class*="\$"]:has(ul, ol) li {
+        background-color: transparent !important;
+        letter-spacing: 1px;
+        color: var(--contrast-color);
+        border: 1px solid rgba(var(--contrast-color-rgb), 0.5);
+    }
+
+    [class*="\$cards"] {
+        :has(*>:is(h4, h5, h6, button, p)) {
+            border-style: double;
+
+            ~:has(:is(picture, img, svg, video, iframe):not([src*="/"])) {
+                border-top: calc(var(--size-1)* 0.5) solid var(--primary-color-shadow) !important;
+                // border-style: double;
+            }
+
+            a {
+                color: var(--primary-color-shadow);
+            }
+        }
+    }
+
+    [class*="\$brand"] {
+        // filter: sepia(.2);
+        background-color: rgba(var(--contrast-color-rgb), .5);
+
+        :is(img, picture, svg, video, iframe) {
+            filter: sepia(.5);
+        }
+    }
+
+    [class*="\$footer"] {
+
+        a,
+        li {
+            border: none !important;
+            color: var(--contrast-color);
+            filter: none;
+        }
+
+        svg {
+            fill: var(--contrast-color) !important;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        
+        &:is(body),
+        [class*="\$brand"],
+        [class*="\$footer"],
+        [class*="\$nav"] {
+            background-color: var(--contrast-color);
+
+            & * {
+                color: var(--primary-color) !important;
+            }
+            [class*="\$"]:has(ul, ol) li {
+                border: 1px solid rgba(var(--primary-color-rgb), 0.5);
+            }
+            
+        
+        }
+    }
+}

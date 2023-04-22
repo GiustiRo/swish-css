@@ -1,0 +1,137 @@
+.\$nav-3 {
+    &~[class*="\$hero"]:not(.\$hero-3, .\$hero-4) {
+        margin-top: calc(var(--size-6) * 1.5);
+        >*:not(:has(img, video, picture, iframe)){
+            padding-inline: var(--size-2);
+        }
+    }
+    position: sticky;
+    top: var(--size-1);
+    background-color: var(--contrast-color);
+    margin-inline: var(--size-3);
+    border-radius: var(--size-2);
+    margin-top: calc(var(--size-6) * -1.2);
+
+    >:last-child::after {
+        content: var(--menu-light);
+
+        @media (prefers-color-scheme: dark) {
+            content: var(--menu-dark);
+        }
+    }
+
+    >:last-child:not(:has(ol, ul)),
+    ul,
+    ol {
+        border: none;
+        box-shadow: none;
+        margin-top: calc(var(--size-6)*0.9) !important;
+        background-color: var(--contrast-color);
+        border-radius: 0 0 var(--size-2) var(--size-2);
+        margin-left: var(--size-2);
+        width: calc(100% - calc(var(--size-3) * 3));
+        overflow: hidden;
+        visibility: visible;
+        opacity: 1;
+        padding-block: 0;
+        gap: 0;
+        max-height: 50vh;
+
+        transition: .3s;
+        transition-delay: opacity .5s;
+
+        &>* {
+            line-height: 0;
+            opacity: 0;
+            display: initial;
+        }
+    }
+
+    >:last-child {
+        &:hover {
+
+            & ul,
+            ol {
+                box-shadow: 0 20px 25px -15px black;
+
+                &>* {
+                    line-height: initial;
+                    padding-block: var(--size-1);
+                    opacity: 1;
+                }
+
+                padding: var(--size-4) var(--size-2);
+                gap: var(--size-1);
+            }
+
+            &:has(ul, ol)>* {
+                overflow: auto;
+                height: auto;
+            }
+        }
+    }
+
+    * {
+        color: var(--primary-color) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .\$nav-3 {
+        &~[class*="\$hero"]:is(.\$hero-3, .\$hero-4) {
+            margin-top: calc(var(--size-2) * 1);
+        }
+        &~[class*="\$hero"]:not(.\$hero-3, .\$hero-4) {
+            margin-top: calc(var(--size-6) * 1);
+            >*:not(:has(img, video, picture, iframe)){
+                padding-inline-end: 0;
+            }
+        }
+        width: 80%;
+        max-width: 800px;
+        margin-inline: auto;
+
+        ~.\$hero-3 {
+            margin-top: calc(var(--size-2) * 1);
+        }
+
+        >:last-child:not(:has(ol, ul)),
+        ul,
+        ol {
+            &>* {
+                opacity: 1;
+                padding-block: unset;
+                line-height: initial;
+            }
+
+            transition: 0s;
+            background-color: none;
+            width: initial;
+            max-width: 80%;
+            margin-top: 0 !important;
+            padding: var(--size-2);
+            line-height: initial;
+            gap: var(--size-1);
+            padding-block: var(--size-1);
+        }
+
+        >:last-child {
+            &:hover {
+
+                & ul,
+                ol {
+                    overflow: hidden;
+                    box-shadow: none;
+
+                    &>* {
+                        padding-block: unset;
+                        line-height: initial;
+                    }
+
+                    gap: var(--size-1);
+                    padding: var(--size-1) var(--size-2);
+                }
+            }
+        }
+    }
+}

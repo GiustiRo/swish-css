@@ -1,0 +1,16 @@
+.\$nav-2{
+    position: sticky !important;
+    position: -webkit-sticky; /* Safari */ 
+    top: 0;
+    background-color: var(--primary-color);
+    order: 1;
+    box-shadow: -45.5vw 15px 25px -20px black, 45.5vw 15px 25px -20px black;
+    margin-bottom: 0; //var(--size-1);
+    bottom: 0;
+    ~.\$hero-3{
+        margin-top: calc(var(--size-2) * -1);
+    }
+    ~.\$hero-1{
+        margin-bottom: calc(var(--size-2) * 1.2);
+    }
+}

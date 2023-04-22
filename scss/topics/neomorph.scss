@@ -1,0 +1,13 @@
+.\$neomorph-1 {
+    img,video,iframe{
+        box-shadow:  7px 7px 24px #232323,
+             -7px -7px 24px #393939;
+    }
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        background: var(--primary-color) !important;
+        box-shadow:  7px 7px 14px #232323,
+             -7px -7px 14px #393939;
+    }
+}

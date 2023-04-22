@@ -1,0 +1,5 @@
+-CSS Conditionals by @Ahmad Shadeed
+-Gradients, Blobs, SVG by @MagicPattern
+-URL-encoder for SVG by @Yoksel
+-Neomorphism by @Adamgiebl
+-Social Icons by @Makeshh

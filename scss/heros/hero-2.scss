@@ -1,0 +1,115 @@
+.\$hero-2 {
+    @import '../buttons/button-4.scss';
+    text-align: center;
+
+    >*:where(:has(:not(img, picture, video, iframe))) {
+        padding-inline: var(--size-2);
+        width: calc(100% - calc(var(--size-2) * 2));
+    }
+
+    >*:where(:has(img, picture, video, iframe, svg)) {
+        text-align: center;
+    }
+
+    gap: var(--size-1);
+
+    >:nth-child(2n) {
+        flex-grow: 1;
+        order: 1;
+    }
+
+    ul,
+    ol {
+        order: -2;
+        display: none;
+    }
+
+    h1 {
+        order: -1;
+    }
+
+    h4,
+    h5,
+    h6 {
+        &:before {
+            display: flex;
+            content: "";
+            align-self: stretch;
+            border: 1px solid var(--contrast-color);
+            border-radius: 100%;
+            order: 1;
+            margin-bottom: var(--size-1);
+            margin-inline: var(--size-5);
+            border-image: linear-gradient(45deg, var(--brand-color-1), var(--brand-color-2)) 1;
+            opacity: .5;
+        }
+    }
+
+    em {
+        color: var(--brand-color-2);
+        font-style: normal; // To Play
+    }
+
+}
+
+@media (min-width: 768px) {
+    .\$hero-2 {
+        text-align: left;
+        flex-direction: row-reverse;
+
+        >:first-child {
+            max-width: 45vw;
+            padding-inline-start: 0;
+        }
+
+        >:nth-child(2n) {
+            flex-grow: 1;
+        }
+
+        button {
+            margin-inline-end: var(--size-2);
+        }
+
+        h4,
+        h5,
+        h6 {
+            &:before {
+                margin-inline-end: var(--size-4);
+                margin-inline-start:auto;
+            }
+        }
+
+        >*:where(:has(img, picture, video, iframe)) {
+            max-height: 100vh;
+
+            picture,
+            img {
+                max-height: inherit;
+            }
+        }
+        >:not(:has(img,picture,video,iframe)){
+            padding-inline: 0 var(--size-4) !important;
+        }
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .\$hero-2 {
+        >:first-child {
+            max-width: 50vw;
+        }
+
+        &:before {
+            margin-inline: var(--size-5);
+        }
+
+        >:nth-child(2n) {
+            flex-grow: 1;
+        }
+
+        >*:where(:has(img, picture, video, iframe)) {
+            max-height: 60vh;
+        }
+    }
+}

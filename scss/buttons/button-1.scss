@@ -1,0 +1,20 @@
+.\$button-1 {
+    border: none;
+    &:is(button, input[type="submit"],
+        input[type="reset"]),
+    &:only-of-type>:is(button, input[type="submit"], input[type="reset"]) {
+        background-color: var(--contrast-color) !important;
+        color: var(--primary-color) !important;
+    }
+}
+
+>:has(button, input[type="submit"],
+    input[type="reset"]) {
+
+    & :is(button,
+        input[type="submit"],
+        input[type="reset"]) {
+        background-color: var(--contrast-color);
+        color: var(--primary-color);
+    }
+}
