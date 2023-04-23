@@ -5,7 +5,12 @@
 This is a SCSS library to convert your starter web projects into beautifull mockup site.
 Responsive, Light and Dark themes and fully combinable styles to play with!
 
-## All semantics covered
+## How to use it
+1) Install the package __npm i swish-css__
+2) Import the index.scss file to your project supporting sass
+3) Play with the class names!
+
+## Semantics covered
 You can try different styles for Heros Sections, Logos & Brands, Cards, Footers and so on.
 - $nav[0-4]
 - $hero[0-4]
